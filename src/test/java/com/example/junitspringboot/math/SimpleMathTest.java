@@ -73,4 +73,53 @@ public class SimpleMathTest {
     Double mult2 = math.multiplication(n2, n1);
     Assertions.assertEquals(mult1, mult2);
   }
+  
+  @Test
+  void multiplication_PositiveNumberWithNegativeNumber_NegativeResult() {
+    Double n1 = 10.0;
+    Double n2 = -5.0;
+    Double mult = math.multiplication(n1, n2);
+    Assertions.assertEquals(-50.0, mult);
+  }
+
+  @Test
+  void multiplication_NegativeNumberWithNegativeNumber_PositiveResult() {
+    Double n1 = -10.0;
+    Double n2 = -5.0;
+    Double mult = math.multiplication(n1, n2);
+    Assertions.assertEquals(50.0, mult);
+  }
+
+  @Test
+  void division_Success() {
+    Double n1 = 10.0;
+    Double n2 = 5.0;
+    Double division = math.division(n1, n2);
+    Assertions.assertEquals(2.0, division);
+  }
+
+  @Test
+  void division_PositiveNumberWithNegativeNumber_NegativeResult() {
+    Double n1 = 10.0;
+    Double n2 = -5.0;
+    Double division = math.division(n1, n2);
+    Assertions.assertEquals(-2.0, division);
+  }
+
+  @Test
+  void division_NegativeNumberWithNegativeNumber_PositiveResult() {
+    Double n1 = -10.0;
+    Double n2 = -5.0;
+    Double division = math.division(n1, n2);
+    Assertions.assertEquals(2.0, division);
+  }
+
+  @Test
+  void division_ArithmeticException() throws ArithmeticException {
+    Double n1 = 10.0;
+    Double n2 = 0.0;
+    Assertions.assertThrows(ArithmeticException.class, () -> {
+      math.division(n1, n2);
+    });
+  }
 }

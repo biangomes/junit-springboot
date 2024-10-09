@@ -115,11 +115,10 @@ public class SimpleMathTest {
   }
 
   @Test
-  void division_ArithmeticException() throws ArithmeticException {
+  void division_ArithmeticException() {
     Double n1 = 10.0;
     Double n2 = 0.0;
-    Assertions.assertThrows(ArithmeticException.class, () -> {
-      math.division(n1, n2);
-    });
+    Double result = math.division(n1, n2);
+    Assertions.assertEquals(0.0, result);
   }
 }

@@ -13,7 +13,7 @@ public class SimpleMath {
         return numberOne * numberTwo;
     }
 
-    public Double division(Double numberOne, Double numberTwo) {
+    public Double division(Double numberOne, Double numberTwo) throws ArithmeticException {
         return numberOne / numberTwo;
     }
 
